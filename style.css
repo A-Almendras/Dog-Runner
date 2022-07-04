@@ -23,11 +23,15 @@ body {
   height: 50px;
   width: 50px;
   background-color: rgba(171, 144, 144, 0.964);
-  position: absolute;
-  top: 210px;
+  /* top: 210px; */
 
-  /* align-self: flex-end; */
+  align-self: flex-end;
   /* flex-shrink: 2; */
+  position: absolute;
+
+  /* animation-name: jump;
+  animation-duration: 0.5s; */
+  /* animation-timing-function: linear; */
 }
 
 #fire-hydrant {
@@ -56,8 +60,14 @@ body {
   0% {
     top: 210px;
   }
+  25% {
+    top: 170px;
+  }
   50% {
     top: 130px;
+  }
+  75% {
+    top: 170px;
   }
   100% {
     top: 210px;
