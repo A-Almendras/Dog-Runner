@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game {
+  height: 260px;
+  width: 700px;
+  border: 2px solid black;
+  position: relative;
+  margin: auto;
+
+  display: flex;
+  /* align-items: center; */
+}
+
+#dog {
+  height: 50px;
+  width: 50px;
+  background-color: rgba(171, 144, 144, 0.964);
+  position: absolute;
+  top: 210px;
+
+  /* align-self: flex-end; */
+  /* flex-shrink: 2; */
+}
+
+#fire-hydrant {
+  height: 60px;
+  width: 30px;
+  background-color: rgba(157, 50, 50, 0.727);
+  /* position: relative;
+  left: 620px; */
+  position: absolute;
+  right: 0px;
+
+  align-self: flex-end;
+}
+
+#bone {
+}
+
+#grass {
+}
+.jump {
+  animation-name: jump;
+  animation-duration: 0.5s;
+}
+
+@keyframes jump {
+  0% {
+    top: 210px;
+  }
+  50% {
+    top: 130px;
+  }
+  100% {
+    top: 210px;
+  }
+}
