@@ -4,6 +4,8 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 const canvasWidth = canvas.width
 const canvasHeight = canvas.height
+let leftArrow = false
+let rightArrow = false
 
 // const dog = document.querySelector('#dog')
 // const obstacle = document.querySelector('#obstacle')
@@ -16,19 +18,32 @@ const canvasHeight = canvas.height
 // To generate dog/main Player
 class Dog {
   constructor() {
+    // sets the initial object values for the dog
     this.width = 50
     this.height = 50
-    // coordinates in 2D contect begin at upper-left of canvas
-    this.x = canvas.width - this.width
-    this.y = canvas.height - this.height
-    this.velX = 0
+    // coordinates in 2D context begin at upper-left of canvas
+    this.x = canvasWidth - this.width
+    this.y = canvasHeight - this.height
   }
   draw() {
     ctx.fillStyle = '#734747'
     ctx.strokeRect(this.x, this.y, this.width, this.height)
   }
   updatePosition() {
-    this.x -= 15
+    // this if else statement prevents the dog from going off the canvas in the horiz direction
+    if (this.x > canvasWidth - this.width) {
+      // if the dog position at x is greater than the canvasWidth - the dog width then set the dog position to be equal to the value
+      this.x = canvasWidth - this.width
+    } else if (this.x < 0) {
+      this.x = 0
+    }
+
+    if (leftArrow === true) {
+      this.x -= 5
+    }
+    if (rightArrow === true) {
+      this.x += 5
+    }
   }
 }
 
@@ -52,10 +67,9 @@ const collectibleCollision = () => {}
 const displayScore = () => {}
 
 // To draw and update the game canvas (animation loop of game)
-//
 const animate = () => {
-  ctx.clearRect(dog.x, dog.y, canvasWidth, canvasHeight)
-  dog.draw()
+  ctx.clearRect(0, 0, canvasWidth, canvasHeight) // deletes canvas between each animation loop
+  dog.draw() // draws dog instance
   dog.updatePosition() // if we dont include this then the draw method occurs on the same location
   requestAnimationFrame(animate) // draws the dog at initial position -> updates the position and redraws dog at updated position -> sequence repeats
   // console.log(requestAnimationFrame(animate))
@@ -67,15 +81,28 @@ const replay = () => {}
 
 ////////////////////////////////
 // Event Listeners Here
-// To initialize/play the game when key pressed occurs
+// To initialize/play the game when arrowkey pressed occurs
 document.addEventListener('keydown', (e) => {
   // console.log(e)
   // console.log(e.key)
   // console.log(e.keyCode)
   if (e.key === 'ArrowLeft') {
-    console.log('left')
+    leftArrow = true
   } else if (e.key === 'ArrowRight') {
-    console.log('right')
+    rightArrow = true
+  }
+})
+
+// For when the arrowkeys are released
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'ArrowLeft') {
+    // console.log('left')
+    leftArrow = false
+    // console.log(leftArrow)
+  } else if (e.key === 'ArrowRight') {
+    // console.log('right')
+    rightArrow = false
+    // console.log(rightArrow)
   }
 })
 
