@@ -6,7 +6,8 @@ const canvasWidth = canvas.width
 const canvasHeight = canvas.height
 let leftArrow = false
 let rightArrow = false
-let obstacles = [] // will contain every instance of obstacle that is created of
+let obstacles = [] // will contain every instance of obstacle that is created
+let collectibles = []
 
 // const dog = document.querySelector('#dog')
 // const obstacle = document.querySelector('#obstacle')
@@ -53,37 +54,58 @@ const dog = new Dog()
 // To an obstacle
 class Obstacle {
   constructor() {
-    // sets the initial object values for the dog
-    this.width = 50
-    this.height = 50
+    // sets the initial object values for the obstacle
+    this.width = 40
+    this.height = 40
     // coordinates in 2D context begin at upper-left of canvas
-    this.x = 100
-    this.y = 100
+    this.x = Math.random() * canvasWidth // will be randomized each time
+    this.y = 0
   }
   draw() {
     ctx.fillStyle = '#a31818'
     ctx.fillRect(this.x, this.y, this.width, this.height)
   }
   updatePosition() {
-    this.y += 2
+    this.y += 4
   }
 }
 
-const obstacle = new Obstacle()
+// const obstacle = new Obstacle()
+// For loop creates 21 instances of new Obstacle
+for (let i = 0; i <= 20; i++) {
+  obstacles.push(new Obstacle())
+  console.log(obstacles)
+}
 
 // To generates Collectibles
-class Collectible {}
+class Collectible {
+  constructor() {
+    // sets the initial object values for the collectible
+    this.width = 40
+    this.height = 40
+    // coordinates in 2D context begin at upper-left of canvas
+    this.x = Math.random() * canvasWidth // will be randomized each time
+    this.y = 0
+  }
+  draw() {
+    ctx.fillStyle = '#d0ef54'
+    ctx.fillRect(this.x, this.y, this.width, this.height)
+  }
+  updatePosition() {
+    this.y += 3
+  }
+}
+
+// const collectible = new Collectible()
+// For loop creates 21 instances of new Obstacle
+for (let i = 0; i <= 20; i++) {
+  collectibles.push(new Collectible())
+  console.log(collectibles)
+}
 
 // To add and animate obstacles & to detects collision for game over (generate obstacles randomly)
-const generateObstacles = () => {
-  let randomTime = Math.random() * 4000
-  setTimeout(() => {
-    // console.log(randomTime)
-    obstacles.push(new Obstacle())
-
-    console.log(obstacles)
-  }, randomTime)
-
+const obstacleEvents = () => {
+  // Supposed to draw and updatePosition of each obstacle instance
   obstacles.forEach((obstacle) => {
     obstacle.draw()
     obstacle.updatePosition()
@@ -91,7 +113,13 @@ const generateObstacles = () => {
 }
 
 // To add and animate collectibles and removes them from game when collision occurs
-const collectibleCollision = () => {}
+const collectibleEvents = () => {
+  // Supposed to draw and updatePosition of each obstacle instance
+  collectibles.forEach((collectible) => {
+    collectible.draw()
+    collectible.updatePosition()
+  })
+}
 
 // To display score
 const displayScore = () => {}
@@ -101,15 +129,15 @@ const animate = () => {
   ctx.clearRect(0, 0, canvasWidth, canvasHeight) // deletes canvas between each animation loop
   dog.draw() // draws dog instance
   dog.updatePosition() // if we dont include this then the draw method occurs on the same location
-  // obstacle.draw()
-  // obstacle.updatePosition()
-  // generateObstacles()
+
+  obstacleEvents()
+  collectibleEvents()
+
   requestAnimationFrame(animate) // draws the dog at initial position -> updates the position and redraws dog at updated position -> sequence repeats
   // console.log(requestAnimationFrame(animate))
 }
 
 animate()
-generateObstacles()
 
 // To replay game if player desides to
 const replay = () => {}
