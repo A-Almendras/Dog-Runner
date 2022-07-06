@@ -6,6 +6,7 @@ const canvasWidth = canvas.width
 const canvasHeight = canvas.height
 let leftArrow = false
 let rightArrow = false
+let obstacles = [] // will contain every instance of obstacle that is created of
 
 // const dog = document.querySelector('#dog')
 // const obstacle = document.querySelector('#obstacle')
@@ -48,17 +49,46 @@ class Dog {
 }
 
 const dog = new Dog()
-// dog.draw()
-// dog.updatePosition()
 
-// To generates Obstacles
-class Obstacle {}
+// To an obstacle
+class Obstacle {
+  constructor() {
+    // sets the initial object values for the dog
+    this.width = 50
+    this.height = 50
+    // coordinates in 2D context begin at upper-left of canvas
+    this.x = 100
+    this.y = 100
+  }
+  draw() {
+    ctx.fillStyle = '#a31818'
+    ctx.fillRect(this.x, this.y, this.width, this.height)
+  }
+  updatePosition() {
+    this.y += 2
+  }
+}
+
+const obstacle = new Obstacle()
 
 // To generates Collectibles
 class Collectible {}
 
-// To add and animate obstacles & to detects collision for game over
-const obstacleCollision = () => {}
+// To add and animate obstacles & to detects collision for game over (generate obstacles randomly)
+const generateObstacles = () => {
+  let randomTime = Math.random() * 4000
+  setTimeout(() => {
+    // console.log(randomTime)
+    obstacles.push(new Obstacle())
+
+    console.log(obstacles)
+  }, randomTime)
+
+  obstacles.forEach((obstacle) => {
+    obstacle.draw()
+    obstacle.updatePosition()
+  })
+}
 
 // To add and animate collectibles and removes them from game when collision occurs
 const collectibleCollision = () => {}
@@ -71,11 +101,16 @@ const animate = () => {
   ctx.clearRect(0, 0, canvasWidth, canvasHeight) // deletes canvas between each animation loop
   dog.draw() // draws dog instance
   dog.updatePosition() // if we dont include this then the draw method occurs on the same location
+  // obstacle.draw()
+  // obstacle.updatePosition()
+  // generateObstacles()
   requestAnimationFrame(animate) // draws the dog at initial position -> updates the position and redraws dog at updated position -> sequence repeats
   // console.log(requestAnimationFrame(animate))
 }
 
 animate()
+generateObstacles()
+
 // To replay game if player desides to
 const replay = () => {}
 
