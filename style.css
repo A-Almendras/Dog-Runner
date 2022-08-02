@@ -75,6 +75,15 @@ body {
 }
 
 #bone {
+  height: 30px;
+  width: 50px;
+  background-image: url(imgs/bone.jpeg);
+  background-size: 50px 30px;
+  position: relative;
+  left: 200px;
+  top: 100px;
+
+  animation: slide 4s linear infinite;
 }
 
 #grass {

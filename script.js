@@ -33,26 +33,49 @@ const removeJumping = () => {
 }
 
 // To generate the obstacles
-const collision = () => {
-  // let obstaclePostition = obstacleSlide.style.getPropertyValue('transform')
-  // console.log(obstaclePostition)
+const collision = setInterval(() => {
+  // gets the position of obstacle in horiz direction when click occurs
   let obstaclePosition = parseInt(
     window.getComputedStyle(obstacle).getPropertyValue('left')
   )
+  // gets the position of the player in the vertical direction when click occurs
   let playerPosition = parseInt(
     window.getComputedStyle(player).getPropertyValue('bottom')
   )
 
-  console.log(obstaclePosition)
-  console.log(playerPosition)
+  // console.log(obstaclePosition)
+  // console.log(playerPosition)
   if (obstaclePosition <= 0 && obstaclePosition >= -50 && playerPosition < 60) {
     obstacle.style.animation = null
-    // clearInterval(timerId)
     console.log('collide')
     alert('collide')
   }
-}
+}, 50)
+
+// const random = () => {
+//   obstacle.style.animation = 'slide 2s linear infinite'
+// }
+// setTimeout(random, 10)
+
 // To generate the bones
+const reward = setInterval(() => {
+  // gets the position of obstacle in horiz direction when click occurs
+  let rewardPosition = parseInt(
+    window.getComputedStyle(bone).getPropertyValue('left')
+  )
+  // gets the position of the player in the vertical direction when click occurs
+  let playerPosition = parseInt(
+    window.getComputedStyle(player).getPropertyValue('bottom')
+  )
+
+  console.log(rewardPosition)
+  console.log(playerPosition)
+  if (rewardPosition <= 30 && rewardPosition >= 0 && playerPosition > 90) {
+    obstacle.style.animation = null
+    console.log('collide')
+    alert('collide')
+  }
+}, 50)
 
 // Game Over
 
@@ -67,7 +90,9 @@ document.addEventListener('click', () => {
   }
 })
 document.addEventListener('click', () => {
-  obstacle.style.animation = 'slide 2s linear infinite'
+  obstacle.style.animation = 'slide 4s linear infinite'
+  // let randomTime = Math.random() * 2000
+  // setTimeout(obstacle.style.animation, randomTime)
 })
 
 // For restart button to replay the game if player choose
