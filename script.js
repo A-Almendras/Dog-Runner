@@ -68,12 +68,12 @@ const reward = setInterval(() => {
     window.getComputedStyle(player).getPropertyValue('bottom')
   )
 
-  console.log(rewardPosition)
+  // console.log(rewardPosition)
   console.log(playerPosition)
-  if (rewardPosition <= 30 && rewardPosition >= 0 && playerPosition > 90) {
+  if (rewardPosition <= -40 && rewardPosition >= -80 && playerPosition > 90) {
     obstacle.style.animation = null
-    console.log('collide')
-    alert('collide')
+    console.log('reward')
+    alert('reward')
   }
 }, 50)
 
@@ -90,7 +90,7 @@ document.addEventListener('click', () => {
   }
 })
 document.addEventListener('click', () => {
-  obstacle.style.animation = 'slide 4s linear infinite'
+  obstacle.style.animation = 'slide 5s linear infinite'
   // let randomTime = Math.random() * 2000
   // setTimeout(obstacle.style.animation, randomTime)
 })
