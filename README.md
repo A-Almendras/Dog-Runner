@@ -8,29 +8,26 @@
 
 ---
 
-<!-- Change Banner Image! -->
-
-![CoverImg](https://www.epicflow.com/wp-content/uploads/2016/07/project_management_minimalism_why_you_need_to_declutter_your_tech_environment.png)
+![CoverImg](https://media.istockphoto.com/vectors/lazy-dog-cute-boxer-puppy-sleeping-icon-logo-design-vector-vector-id952024148?k=20&m=952024148&s=612x612&w=0&h=hWQ_nljlpfM4pw3F6R_2uVgcCHEsiqRrMfk7vNRWt4w=)
 
 ---
 
 ### **_Description_**
 
-#### Dog runner is a browser game where the dog will collect bones by avoiding obstacles when presented. The dog will keep running until it collides with a barrier, ending the game.
+#### Dog runner is a browser game where the dog should be able to collect bones by avoiding obstacles when presented. The dog will keep running until it collides with a barrier.
 
 ---
 
 ### **_Technologies_**
 
 - Languages: HTLM5, CSS, Javscript
-- VSCode
 - Trello
 
 ---
 
 ### **_Getting Started_**
 
-##### The game will initiate with the dog running towards an obstacle. Once the dog approaches the barrier, the user must determine when to click the page to activate the jump. If the dog's jumping time is off, it will collide with the obstacle causing the user to lose the game. Timing the jumps is key to winning the game. The longer the run, the higher the score.
+##### The game will directly prompt the player to the welcome page in where it will describe how to play the game. Once ready the user will click on the begin button which will redirect them to the actual game. The player can initiate the game by a click anywhere on the screen, this will cause the obstacle to begin sliding towards the dog. The player must determine when to click the page to activate the jump to either collect a bone or avoid the fire hydrant obstacle. If the dog's jumping time is off, it may collide with the obstacle causing the player to lose the game. Timing the jumps is key to achieving a high score.
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/axD6qkG5/project-1-dog-runner-game).
 
@@ -44,35 +41,35 @@
 
 ##### Placeholder image
 
-![Playing](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpawleaks.com%2Fwp-content%2Fuploads%2F2021%2F06%2Fboxer-dog.jpg&f=1&nofb=1)
+![Playing]()
 
 #### **Image Header 2**
 
 ##### Placeholder image
 
-![UpClose](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F30%2F89%2Fa3%2F3089a3f4235672cce31f1560fd6a9e7a.png&f=1&nofb=1)
+![UpClose]()
 
 #### **Image Header 3**
 
 ##### Placeholder image
 
-![TongueOut](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2FGYW7o9v.jpg&f=1&nofb=1)
+![TongueOut]()
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
-- [ ] Future Update 2
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
+- [ ] To implement score board for bones collected
+- [ ] To generate obstacles and rewards randomly
+- [ ] To utlize sprites for dog movement
+- [ ] To create a game over/replay pop up.
 
 ---
 
 ### **_Credits_**
 
-##### MDN: [MDN Search](https://developer.mozilla.org/en-US/)
+##### [MDN Search](https://developer.mozilla.org/en-US/)
 
-##### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
+##### [W3Schools](https://www.w3schools.com/)
 
-##### Markdown CheatSheet: [Markdown Guide Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+##### Stackoverflow
