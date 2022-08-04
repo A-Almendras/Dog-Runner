@@ -1,19 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Mouse+Memoirs&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
+
   /* align-items: center; */
+}
+
+h1 {
+  font-family: 'Mouse Memoirs', sans-serif;
+  color: #808000;
+  margin: 1em 1em 1em 1em;
+  letter-spacing: 1.8px;
+  font-size: 2.8em;
 }
 
 .page-1 {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
+  justify-content: center;
 
   text-align: center;
   height: 100vh;
   margin: 0;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background-color: #f7e7ce;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Barlow', sans-serif;
+  margin: 0 1em 2em 1em;
+}
+
+li {
+  list-style: none;
+  letter-spacing: 1.8px;
+  padding-bottom: 7px;
+}
+
+li:before {
+  content: '\2765';
 }
 
 .game {
@@ -32,9 +61,7 @@ body {
   background-image: url(imgs/boxer.jpeg);
   background-size: 50px 50px;
   position: relative;
-  /* left: 20px; */
 
-  /* bottom: 0px; */
   align-self: flex-end;
 }
 
@@ -97,19 +124,20 @@ body {
 .btn {
   padding: 0.35em 1.2em;
   border: 0.1em solid #ab6d6d;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  font-weight: 300;
+  border-radius: 0.4em;
+  font-weight: 700;
   color: #ab6d6d;
-  text-align: center;
   transition: all 0.2s;
-  animation: btn 5s infinite linear;
+  animation: btn 6s infinite linear;
   position: relative;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 1.8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 .btn:hover {
-  color: #675858;
+  color: #cc7722;
   background-color: #ffffff;
+  border: 0.1em solid #cc7722;
 }
 
 /* @media all and (max-width: 30em) {
