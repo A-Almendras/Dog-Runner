@@ -55,10 +55,7 @@
 
 ### **_Credits_**
 
-##### [MDN Search](https://developer.mozilla.org/en-US/)
-
-##### [W3Schools](https://www.w3schools.com/)
-
-##### YouTube
-
-##### Stackoverflow
+- [MDN Search](https://developer.mozilla.org/en-US/)
+- [W3Schools](https://www.w3schools.com/)
+- YouTube
+- Stackoverflow
