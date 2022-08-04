@@ -85,7 +85,7 @@ li:before {
   background-image: url(imgs/fire-hydrant.jpeg);
   background-size: 40px 60px;
   position: relative;
-  left: 610px;
+  left: 550px;
 
   align-self: flex-end;
 }
@@ -166,7 +166,7 @@ li:before {
 
   height: 260px;
   width: 700px;
-  border: 0.25em ridge #bebebe;
+  border: 0.3em inset #bebebe;
   position: relative;
   margin-bottom: 4em;
   background-color: #ffffff;
@@ -197,4 +197,8 @@ li:before {
   background-image: url(https://www.angelsagainstabuse.org/wp-content/uploads/2018/11/white-background-with-grass.jpg);
   background-size: 700px 260px;
   position: relative;
+}
+
+#score {
+  display: flex;
 }

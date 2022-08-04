@@ -3,7 +3,9 @@
 const player = document.querySelector('#player')
 const obstacle = document.querySelector('#obstacle')
 const bone = document.querySelector('#bone')
+const score = document.querySelector('#score')
 let gameOver = false
+let bScore = 0
 
 ////////////////////////////////
 // Functions For Game Logic Here
@@ -11,16 +13,18 @@ let gameOver = false
 const initGame = () => {
   jump()
   setInterval(collision, 2000)
+  score.innerText = `Score: ${bScore}`
 }
 
 // To allow player to jump when click event occurs
 const jump = () => {
+  score.innerText = bScore
   if (player.classList === 'jump') {
     return
   } else {
     // animation will occur in a class called jump. When user clicks want to activate jump animation by adding the class
     player.classList.add('jump')
-    console.log('jump')
+    score.innerText = `Score: ${bScore}`
 
     // based on keyframes in CSS, animation lasts for .5 secs, so want to remove the class after .5 secs so we can redo animation whenever we click again
     setTimeout(removeJumping, 600)
@@ -47,8 +51,9 @@ const collision = setInterval(() => {
   // console.log(playerPosition)
   if (obstaclePosition <= 0 && obstaclePosition >= -50 && playerPosition < 60) {
     obstacle.style.animation = null
-    console.log('collide')
-    alert('collide')
+    alert('You ran into a fire hydrant :( Better be careful!')
+    bScore--
+    score.innerText = `Score: ${bScore}`
   }
 }, 50)
 
@@ -72,14 +77,11 @@ const reward = setInterval(() => {
   console.log(playerPosition)
   if (rewardPosition <= -40 && rewardPosition >= -80 && playerPosition > 90) {
     obstacle.style.animation = null
-    console.log('reward')
-    alert('reward')
+    // alert('You earned a reward! Keep it up.')
+    bScore++
+    score.innerText = `Score: ${bScore}`
   }
 }, 50)
-
-// Game Over
-
-// Restart the game
 
 ////////////////////////////////
 // Event Listeners Here
@@ -94,5 +96,3 @@ document.addEventListener('click', () => {
   // let randomTime = Math.random() * 2000
   // setTimeout(obstacle.style.animation, randomTime)
 })
-
-// For restart button to replay the game if player choose
