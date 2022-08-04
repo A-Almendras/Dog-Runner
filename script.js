@@ -47,8 +47,6 @@ const collision = setInterval(() => {
     window.getComputedStyle(player).getPropertyValue('bottom')
   )
 
-  // console.log(obstaclePosition)
-  // console.log(playerPosition)
   if (obstaclePosition <= 0 && obstaclePosition >= -50 && playerPosition < 60) {
     obstacle.style.animation = null
     alert('You ran into a fire hydrant :( Better be careful!')
@@ -57,6 +55,7 @@ const collision = setInterval(() => {
   }
 }, 50)
 
+// Trying to randomize obtacles
 // const random = () => {
 //   obstacle.style.animation = 'slide 2s linear infinite'
 // }
@@ -73,7 +72,6 @@ const reward = setInterval(() => {
     window.getComputedStyle(player).getPropertyValue('bottom')
   )
 
-  // console.log(rewardPosition)
   console.log(playerPosition)
   if (rewardPosition <= -40 && rewardPosition >= -80 && playerPosition > 90) {
     obstacle.style.animation = null
