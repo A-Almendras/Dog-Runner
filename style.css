@@ -45,16 +45,6 @@ li:before {
   content: '\2765';
 }
 
-.game {
-  height: 260px;
-  width: 700px;
-  border: 2px solid black;
-  position: relative;
-  margin: auto;
-
-  display: flex;
-}
-
 #player {
   height: 50px;
   width: 50px;
@@ -121,32 +111,6 @@ li:before {
   animation: slide 8s linear infinite;
 }
 
-.btn {
-  padding: 0.35em 1.2em;
-  border: 0.1em solid #ab6d6d;
-  border-radius: 0.4em;
-  font-weight: 700;
-  color: #ab6d6d;
-  transition: all 0.2s;
-  animation: btn 6s infinite linear;
-  position: relative;
-  font-family: 'Barlow', sans-serif;
-  letter-spacing: 1.8px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-}
-.btn:hover {
-  color: #cc7722;
-  background-color: #ffffff;
-  border: 0.1em solid #cc7722;
-}
-
-/* @media all and (max-width: 30em) {
-  a.button1 {
-    display: block;
-    margin: 0.4em auto;
-  } */
-/* } */
-
 @keyframes btn {
   0% {
     top: 0em;
@@ -169,4 +133,68 @@ li:before {
   100% {
     top: 0em;
   }
+}
+
+.btn {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ab6d6d;
+  border-radius: 0.4em;
+  font-weight: 700;
+  color: #ab6d6d;
+  transition: all 0.2s;
+  animation: btn 6s infinite linear;
+  position: relative;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 1.8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.btn:hover {
+  color: #cc7722;
+  background-color: #ffffff;
+  border: 0.1em solid #cc7722;
+}
+
+.page-2 {
+  background-color: #f7e7ce;
+  display: flex;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+
+  height: 260px;
+  width: 700px;
+  border: 0.25em ridge #bebebe;
+  position: relative;
+  margin-bottom: 4em;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.btn2 {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ab6d6d;
+  border-radius: 0.4em;
+  font-weight: 700;
+  color: #ab6d6d;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 1.8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.btn2:hover {
+  color: #cc7722;
+  background-color: #ffffff;
+  border: 0.1em solid #cc7722;
+  animation: btn 6s infinite linear;
+  position: relative;
+  transition: all 0.1s;
+}
+
+#background {
+  background-image: url(https://www.angelsagainstabuse.org/wp-content/uploads/2018/11/white-background-with-grass.jpg);
+  background-size: 700px 260px;
+  position: relative;
 }
