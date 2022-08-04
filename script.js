@@ -55,7 +55,7 @@ const collision = setInterval(() => {
   }
 }, 50)
 
-// Trying to randomize obtacles
+// Trying to randomize obtacles; for future reference
 // const random = () => {
 //   obstacle.style.animation = 'slide 2s linear infinite'
 // }
@@ -91,6 +91,4 @@ document.addEventListener('click', () => {
 })
 document.addEventListener('click', () => {
   obstacle.style.animation = 'slide 5s linear infinite'
-  // let randomTime = Math.random() * 2000
-  // setTimeout(obstacle.style.animation, randomTime)
 })

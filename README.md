@@ -21,48 +21,35 @@
 ### **_Technologies_**
 
 - Languages: HTLM5, CSS, Javscript
-- Trello
 
 ---
 
 ### **_Getting Started_**
 
-##### The game will directly prompt the player to the welcome page in where it will describe how to play the game. Once ready the user will click on the begin button which will redirect them to the actual game. The player can initiate the game by a click anywhere on the screen, this will cause the obstacle to begin sliding towards the dog. The player must determine when to click the page to activate the jump to either collect a bone or avoid the fire hydrant obstacle. If the dog's jumping time is off, it may collide with the obstacle causing the player to lose the game. Timing the jumps is key to achieving a high score.
+##### The game will directly prompt the player to the main page in where it will describe how to play the game. Once ready the user will click on the play button which will redirect them to the actual game. The player can initiate the game by a click anywhere on the screen, this will cause the obstacle to begin sliding towards the dog. The player must determine when to click the page to activate the jump to either collect a bone or avoid the fire hydrant obstacle. If the dog's jumping time is off, it may collide with the obstacle causing the player to lose the game. Timing the jumps is key to achieving a high score. A button was also included below the game to redirect you back to the main page in case you forget the rules.
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/axD6qkG5/project-1-dog-runner-game).
-
-##### The project itself was deployed and can be viewed [here](https://www.google.com/).
 
 ---
 
 ### **_Screenshots_**
 
-#### **Image Header 1**
+#### **Main Page**
 
-##### Placeholder image
+![index](imgs/html-page.png)
 
-![Playing]()
+#### **Game Page**
 
-#### **Image Header 2**
-
-##### Placeholder image
-
-![UpClose]()
-
-#### **Image Header 3**
-
-##### Placeholder image
-
-![TongueOut]()
+![game](imgs/game-page.png)
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] To implement score board for bones collected
 - [ ] To generate obstacles and rewards randomly
 - [ ] To utlize sprites for dog movement
 - [ ] To create a game over/replay pop up.
+- [x] To implement score board for bones collected
 
 ---
 
@@ -71,5 +58,7 @@
 ##### [MDN Search](https://developer.mozilla.org/en-US/)
 
 ##### [W3Schools](https://www.w3schools.com/)
+
+##### YouTube
 
 ##### Stackoverflow
